@@ -1,0 +1,15 @@
+:root{--accent:#0b66c3;--bg:#f8fafc;--text:#0f1720;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial}
+*{box-sizing:border-box}body{margin:0;color:var(--text);background:var(--bg);line-height:1.5}
+.container{max-width:860px;margin:0 auto;padding:28px}
+.hero{background:#fff;border-bottom:4px solid var(--accent);padding:36px 0}
+.hero h1{margin:0;font-size:28px}
+.subtitle{color:#334155;margin:6px 0}
+.contact{margin:4px 0;color:#475569}
+.links a{color:var(--accent);text-decoration:none}
+h2{margin-top:22px;color:#0f1720}
+ul{margin:8px 0 16px 20px}
+.projects li{margin-bottom:12px}
+.footer{margin:40px 0 80px;color:#334155}
+a{color:var(--accent)}
+
+@media(min-width:900px){.hero{padding:44px}.hero h1{font-size:34px}}
