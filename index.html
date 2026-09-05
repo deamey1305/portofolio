@@ -1,26 +1,50 @@
 <!doctype html>
 <html lang="id">
-<head>
+  <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Portofolio Nadhea Ameylia — Web & Database Developer" />
   <title>Nadhea Ameylia — Portofolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <header class="hero">
-    <div class="container">
-      <h1>Nadhea Ameylia</h1>
-      <p class="subtitle">D3 Manajemen Informatika — Web & Database Developer</p>
-      <p class="contact">nadheaameylia@gmail.com • 0895-3782-16440</p>
-      <p class="links">
-        <a href="https://github.com/deamey1305" target="_blank" rel="noopener">GitHub</a> •
-        <a href="https://www.linkedin.com/in/nadhea-ameylia-b7a349309" target="_blank" rel="noopener">LinkedIn</a>
-      </p>
+  <body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#home">Nadhea Ameylia</a>
+      <div class="nav-links">
+        <a href="#projects">Proyek</a>
+        <a href="#about">Tentang</a>
+        <a href="#contact">Kontak</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home" class="hero">
+    <div class="container hero-inner">
+      <div class="hero-left">
+        <h1>Nadhea Ameylia</h1>
+        <p class="subtitle">D3 Manajemen Informatika — Web & Database Developer</p>
+        <p class="contact">nadheaameylia@gmail.com • 0895-3782-16440</p>
+        <p class="links">
+          <a href="https://github.com/deamey1305" target="_blank" rel="noopener">GitHub</a> •
+          <a href="https://www.linkedin.com/in/nadhea-ameylia-b7a349309" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
+      </div>
+      <div class="hero-right">
+        <div class="profile-wrap">
+          <img src="profile.jpg" alt="Nadhea Ameylia" class="profile-img" />
+          <div class="profile-overlay">
+            <div class="overlay-name">Nadhea Ameylia</div>
+            <div class="overlay-role">Web & Database Developer</div>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main class="container">
-    <section>
+    <main class="container">
+    <section id="about" class="fade-in">
       <h2>Tentang Saya</h2>
       <p>Lulusan D3 Manajemen Informatika, Politeknik Negeri Lampung. Berpengalaman sebagai AI‑Assisted Development Intern, bekerja pada pengembangan sistem informasi (SIMPEG) dan aplikasi Point of Sale (KasirLokal). Terbiasa bekerja dengan JavaScript, Node.js, PostgreSQL, dan metode pengujian seperti Black Box Testing.</p>
     </section>
@@ -52,32 +76,63 @@
       </ul>
     </section>
 
-    <section>
-      <h2>Proyek</h2>
-      <ul class="projects">
-        <li>
-          <strong>KasirLokal — Aplikasi POS</strong><br />
-          Landing & sistem POS untuk UMKM. Demo: <a href="https://kasirlokal.my.id" target="_blank" rel="noopener">kasirlokal.my.id</a>
-        </li>
-        <li>
-          <strong>Database Evoteks — Admin Panel</strong><br />
-          Panel dan manajemen data: <a href="https://database.evoteks.org/" target="_blank" rel="noopener">database.evoteks.org</a>
-        </li>
-        <li>
-          <strong>Repositori GitHub</strong><br />
-          Kode proyek dan eksperimen: <a href="https://github.com/deamey1305" target="_blank" rel="noopener">github.com/deamey1305</a>
-        </li>
-      </ul>
+    <section id="projects" class="fade-in">
+      <h2>Proyek Pilihan</h2>
+      <div class="project-grid">
+        <article class="card">
+          <h3>KasirLokal — Aplikasi POS</h3>
+          <p>Landing page dan sistem POS berbasis web untuk UMKM. Fitur transaksi, manajemen produk, dan integrasi payment gateway.</p>
+          <p class="tags"><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">EJS</span></p>
+          <p><a class="btn" href="https://kasirlokal.my.id" target="_blank" rel="noopener">Lihat demo</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Database Evoteks — Admin Panel</h3>
+          <p>Panel admin dan sistem manajemen data untuk kebutuhan internal Evoteks, mendukung audit dan pelaporan.</p>
+          <p class="tags"><span class="tag">PostgreSQL</span><span class="tag">Admin</span></p>
+          <p><a class="btn" href="https://database.evoteks.org/" target="_blank" rel="noopener">Buka panel</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Souvnela — Web Pemesanan Souvenir</h3>
+          <p>Aplikasi pemesanan souvenir berbasis digital sebagai solusi branding dan layanan instan untuk kampus. Menyederhanakan proses pemesanan manual menjadi online.</p>
+          <p class="tags"><span class="tag">Web</span><span class="tag">E‑commerce</span></p>
+          <p><a class="btn" href="#" target="_blank" rel="noopener">Lihat proyek</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Aplikasi Pembelajaran Anak — Mobile</h3>
+          <p>Aplikasi mobile UI/UX untuk pembelajaran anak — fokus pada navigasi yang mudah, konten edukatif, dan desain ramah anak.</p>
+          <p class="tags"><span class="tag">UI/UX</span><span class="tag">Mobile</span></p>
+          <p><a class="btn" href="#" target="_blank" rel="noopener">Detail proyek</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Repositori GitHub</h3>
+          <p>Kumpulan kode, eksperimen, dan demo proyek. Lihat kode sumber dan dokumentasi tiap proyek di GitHub.</p>
+          <p class="tags"><span class="tag">GitHub</span></p>
+          <p><a class="btn" href="https://github.com/deamey1305" target="_blank" rel="noopener">Lihat GitHub</a></p>
+        </article>
+      </div>
     </section>
 
-    <section>
+    <section class="fade-in">
       <h2>Pendidikan & Sertifikasi</h2>
       <p>D3 Manajemen Informatika — Politeknik Negeri Lampung (2023–2026). Tugas akhir: Pengembangan Sistem Informasi Kepegawaian (SIMPEG).</p>
       <p>Sertifikat termasuk Certificate of Internship (E17 Course) dan beberapa kursus IBM SkillsBuild terkait data.</p>
     </section>
+    <section id="contact" class="fade-in">
+      <h2>Kontak</h2>
+      <p>Ingin versi PDF atau halaman dengan screenshot proyek? Hubungi saya atau lihat profil dan repositori:</p>
+      <p>
+        <a class="btn" href="mailto:nadheaameylia@gmail.com">Kirim Email</a>
+        <a class="btn" href="https://github.com/deamey1305" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/nadhea-ameylia-b7a349309" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+    </section>
 
     <footer class="footer">
-      <p>Ingin versi PDF atau halaman dengan screenshot proyek? Hubungi: <a href="mailto:nadheaameylia@gmail.com">nadheaameylia@gmail.com</a></p>
+      <p>Created by Nadhea Ameylia — © 2026</p>
     </footer>
   </main>
 </body>
