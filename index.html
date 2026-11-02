@@ -1,224 +1,1059 @@
 <!doctype html>
 <html lang="id">
   <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Portofolio Nadhea Ameylia — Web & Database Developer" />
-  <title>Nadhea Ameylia — Portofolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-</head>
-  <body>
-  <nav class="site-nav">
-    <div class="nav-inner">
-      <a class="nav-brand" href="#home">Nadhea Ameylia</a>
-      <div class="nav-links">
-        <a href="#projects">Proyek</a>
-        <a href="#about">Tentang</a>
-        <a href="#contact">Kontak</a>
-      </div>
-    </div>
-  </nav>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nadhea Ameylia — Web & Database Developer</title>
+    <meta
+      name="description"
+      content="Portofolio Nadhea Ameylia, lulusan D3 Manajemen Informatika Politeknik Negeri Lampung. Membangun aplikasi web dengan Node.js, PostgreSQL, dan JavaScript."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f4fb;
+        --surface: #ffffff;
+        --ink: #1b1840;
+        --muted: #5e5b80;
+        --line: #dedbf0;
+        --accent: #5b4cf0;
+        --accent-soft: #e7e4fe;
+        --mark: #ffb84d;
+        --code-bg: #1b1840;
+        --code-ink: #e9e7ff;
+        --code-dim: #9a96cc;
+        --radius: 18px;
+        --display: "Bricolage Grotesque", system-ui, sans-serif;
+        --body: "Instrument Sans", system-ui, sans-serif;
+        --mono: "JetBrains Mono", ui-monospace, monospace;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 84px;
+      }
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--body);
+        font-size: 17px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      :focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 3px;
+        border-radius: 6px;
+      }
+      .wrap {
+        width: min(1120px, 100% - 40px);
+        margin-inline: auto;
+      }
 
-  <header id="home" class="hero">
-    <div class="container hero-inner">
-      <div class="hero-left">
-        <h1>Nadhea Ameylia</h1>
-        <p class="subtitle">D3 Manajemen Informatika — Web & Database Developer</p>
-        <p class="contact">nadheaameylia@gmail.com • 0895-3782-16440</p>
-        <p class="links">
-          <a href="https://github.com/deamey1305" target="_blank" rel="noopener">GitHub</a> •
-          <a href="https://www.linkedin.com/in/nadhea-ameylia-b7a349309" target="_blank" rel="noopener">LinkedIn</a>
-        </p>
+      /* nav */
+      header.nav {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(245, 244, 251, 0.88);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 68px;
+      }
+      .brand {
+        font-family: var(--display);
+        font-weight: 800;
+        font-size: 1.2rem;
+        text-decoration: none;
+        letter-spacing: -0.02em;
+      }
+      .brand span {
+        color: var(--accent);
+      }
+      .nav ul {
+        display: flex;
+        gap: 6px;
+        list-style: none;
+      }
+      .nav ul a {
+        display: block;
+        padding: 8px 14px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        color: var(--muted);
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+      .nav ul a:hover {
+        background: var(--accent-soft);
+        color: var(--ink);
+      }
+
+      /* hero */
+      .hero {
+        padding: 72px 0 88px;
+      }
+      .hero .wrap {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 56px;
+        align-items: center;
+      }
+      .hero h1 {
+        font-family: var(--display);
+        font-weight: 800;
+        font-size: clamp(2.8rem, 6.4vw, 5.2rem);
+        line-height: 0.98;
+        letter-spacing: -0.035em;
+        margin-bottom: 22px;
+      }
+      .hero .role {
+        font-family: var(--display);
+        font-weight: 500;
+        font-size: clamp(1.15rem, 2vw, 1.4rem);
+        color: var(--accent);
+        margin-bottom: 18px;
+      }
+      .hero p.lead {
+        max-width: 34em;
+        color: var(--muted);
+        font-size: 1.08rem;
+        margin-bottom: 32px;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 13px 22px;
+        border-radius: 999px;
+        font-weight: 600;
+        text-decoration: none;
+        border: 2px solid var(--ink);
+        transition:
+          transform 0.15s,
+          background 0.2s,
+          color 0.2s;
+      }
+      .btn.primary {
+        background: var(--ink);
+        color: #fff;
+      }
+      .btn.primary:hover {
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+      .btn.ghost:hover {
+        background: var(--ink);
+        color: #fff;
+      }
+      .btn:active {
+        transform: translateY(1px);
+      }
+
+      /* the one memorable element: query card */
+      .query {
+        background: var(--code-bg);
+        color: var(--code-ink);
+        border-radius: 22px;
+        padding: 0;
+        box-shadow: 0 30px 60px -28px rgba(27, 24, 64, 0.55);
+        overflow: hidden;
+      }
+      .query .bar {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 18px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .query .avatar {
+        width: 88px;
+        height: 88px;
+        border-radius: 22px;
+        background: var(--mark);
+        color: var(--ink);
+        display: grid;
+        place-items: center;
+        font-family: var(--display);
+        font-weight: 800;
+        overflow: hidden;
+        flex: none;
+      }
+      .query .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 22%;
+      }
+      .query .who {
+        font-size: 1.15rem;
+      }
+      .query .who {
+        font-weight: 600;
+        line-height: 1.25;
+      }
+      .query .who small {
+        display: block;
+        font-weight: 400;
+        color: var(--code-dim);
+        font-size: 0.82rem;
+      }
+      .query pre {
+        font-family: var(--mono);
+        font-size: 0.84rem;
+        line-height: 1.75;
+        padding: 20px 20px 8px;
+        white-space: pre-wrap;
+        color: var(--code-ink);
+        min-height: 6.4em;
+      }
+      .query .kw {
+        color: #a99bff;
+      }
+      .query .str {
+        color: var(--mark);
+      }
+      .query .caret {
+        display: inline-block;
+        width: 8px;
+        height: 1em;
+        background: var(--mark);
+        vertical-align: -2px;
+        animation: blink 1s steps(2) infinite;
+      }
+      .result {
+        padding: 6px 20px 22px;
+        opacity: 0;
+        transform: translateY(6px);
+        transition:
+          opacity 0.5s,
+          transform 0.5s;
+      }
+      .result.show {
+        opacity: 1;
+        transform: none;
+      }
+      .result dl {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0;
+      }
+      .result dt,
+      .result dd {
+        padding: 9px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.92rem;
+      }
+      .result dt {
+        font-family: var(--mono);
+        font-size: 0.78rem;
+        color: var(--code-dim);
+        padding-right: 20px;
+        display: flex;
+        align-items: center;
+      }
+      .result dd {
+        font-weight: 500;
+        text-align: right;
+      }
+      .result dd b {
+        color: var(--mark);
+        font-weight: 600;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      /* sections */
+      section {
+        padding: 84px 0;
+      }
+      section h2 {
+        font-family: var(--display);
+        font-weight: 800;
+        font-size: clamp(2rem, 4vw, 2.9rem);
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+        margin-bottom: 12px;
+      }
+      .section-sub {
+        color: var(--muted);
+        max-width: 36em;
+        margin-bottom: 44px;
+      }
+      .band {
+        background: var(--surface);
+        border-block: 1px solid var(--line);
+      }
+
+      /* about */
+      .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+      }
+      .about p {
+        color: var(--muted);
+        margin-bottom: 16px;
+      }
+      .about p strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+      .skills {
+        display: grid;
+        gap: 18px;
+      }
+      .skill-group h3 {
+        font-family: var(--display);
+        font-size: 1.02rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .chips li {
+        list-style: none;
+        padding: 6px 14px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      /* projects: rows, not identical cards */
+      .projects {
+        border-top: 2px solid var(--ink);
+      }
+      .project {
+        display: grid;
+        grid-template-columns: 120px 1fr auto;
+        gap: 28px;
+        padding: 30px 0;
+        border-bottom: 1px solid var(--line);
+        align-items: start;
+        transition: background 0.2s;
+      }
+      .project:hover {
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(91, 76, 240, 0.05),
+          transparent
+        );
+      }
+      .project .when {
+        font-family: var(--mono);
+        font-size: 0.82rem;
+        color: var(--muted);
+        padding-top: 6px;
+      }
+      .project h3 {
+        font-family: var(--display);
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+        margin-bottom: 8px;
+      }
+      .project p {
+        color: var(--muted);
+        max-width: 40em;
+        margin-bottom: 14px;
+      }
+      .project .chips li {
+        background: transparent;
+        border: 1px solid var(--line);
+        padding: 3px 12px;
+        font-size: 0.84rem;
+      }
+      .project .go {
+        align-self: center;
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 2px solid var(--mark);
+        padding-bottom: 2px;
+        white-space: nowrap;
+      }
+      .project .go:hover {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      .project .go.none {
+        border: 0;
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      /* timeline */
+      .timeline {
+        position: relative;
+        display: grid;
+        gap: 36px;
+        padding-left: 34px;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 7px;
+        top: 8px;
+        bottom: 8px;
+        width: 2px;
+        background: var(--line);
+      }
+      .event {
+        position: relative;
+      }
+      .event::before {
+        content: "";
+        position: absolute;
+        left: -34px;
+        top: 8px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--bg);
+        border: 4px solid var(--accent);
+      }
+      .band .event::before {
+        background: var(--surface);
+      }
+      .event .when {
+        font-family: var(--mono);
+        font-size: 0.82rem;
+        color: var(--muted);
+      }
+      .event h3 {
+        font-family: var(--display);
+        font-size: 1.35rem;
+        font-weight: 700;
+        letter-spacing: -0.015em;
+        margin: 2px 0 2px;
+      }
+      .event .org {
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .event ul {
+        padding-left: 1.1em;
+        color: var(--muted);
+      }
+      .event li {
+        margin-bottom: 6px;
+      }
+
+      /* education */
+      .edu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+      }
+      .edu h3 {
+        font-family: var(--display);
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 14px;
+      }
+      .edu .item {
+        padding: 18px 0;
+        border-top: 1px solid var(--line);
+      }
+      .edu .item strong {
+        display: block;
+        font-weight: 600;
+      }
+      .edu .item span {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .certs {
+        list-style: none;
+      }
+      .certs li {
+        padding: 14px 0;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.97rem;
+      }
+      .certs li b {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      /* contact */
+      .contact {
+        background: var(--ink);
+        color: #fff;
+        border-radius: 28px;
+        padding: 64px 48px;
+        text-align: left;
+      }
+      .contact h2 {
+        color: #fff;
+        max-width: 14em;
+      }
+      .contact p {
+        color: #c9c6ee;
+        max-width: 32em;
+        margin-bottom: 28px;
+      }
+      .contact .btn {
+        border-color: #fff;
+        color: #fff;
+      }
+      .contact .btn.primary {
+        background: var(--mark);
+        border-color: var(--mark);
+        color: var(--ink);
+      }
+      .contact .btn.primary:hover {
+        background: #fff;
+        border-color: #fff;
+      }
+      .contact .btn:not(.primary):hover {
+        background: #fff;
+        color: var(--ink);
+      }
+      footer {
+        padding: 32px 0 48px;
+        color: var(--muted);
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+      @media (max-width: 860px) {
+        .hero {
+          padding: 44px 0 56px;
+        }
+        .hero .wrap,
+        .about,
+        .edu {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .project {
+          grid-template-columns: 1fr;
+          gap: 6px;
+        }
+        .project .go {
+          justify-self: start;
+          margin-top: 4px;
+        }
+        .contact {
+          padding: 44px 26px;
+        }
+        .nav ul a {
+          padding: 8px 10px;
+        }
+      }
+      @media (max-width: 480px) {
+        body {
+          font-size: 16px;
+        }
+        .brand {
+          font-size: 1.05rem;
+        }
+        .nav ul a {
+          font-size: 0.88rem;
+          padding: 8px 8px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        * {
+          animation: none !important;
+          transition: none !important;
+        }
+        .result {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="wrap">
+        <a class="brand" href="#top">nadhea<span>.</span></a>
+        <nav aria-label="Navigasi utama">
+          <ul>
+            <li><a href="#proyek">Proyek</a></li>
+            <li><a href="#pengalaman">Pengalaman</a></li>
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
+        </nav>
       </div>
-      <div class="hero-right">
-        <div class="profile-wrap">
-          <img src="profile.jpg" alt="Nadhea Ameylia" class="profile-img" />
-          <div class="profile-overlay">
-            <div class="overlay-name">Nadhea Ameylia</div>
-            <div class="overlay-role">Web & Database Developer</div>
+    </header>
+
+    <main id="top">
+      <div class="hero">
+        <div class="wrap">
+          <div>
+            <p class="role">Web &amp; Database Developer</p>
+            <h1>Nadhea Ameylia</h1>
+            <p class="lead">
+              Lulusan D3 Manajemen Informatika Politeknik Negeri Lampung (IPK
+              3.71, Dengan Pujian). Saya membangun aplikasi web dari tampilan
+              sampai database, dan terbiasa menerjemahkan kebutuhan pengguna
+              menjadi sistem yang bisa langsung dipakai.
+            </p>
+            <div class="actions">
+              <a class="btn primary" href="#proyek">Lihat proyek</a>
+              <a
+                class="btn ghost"
+                href="https://drive.google.com/drive/folders/1SbOaA4_wekLN52mhF6m-S9wikB6Wg5zZ?usp=sharing"
+                target="_blank"
+                rel="noopener"
+                >Buka CV</a
+              >
+            </div>
           </div>
+
+          <aside class="query" aria-label="Ringkasan profil">
+            <div class="bar">
+              <div class="avatar">
+                <img
+                  src="foto-profil.jpg"
+                  alt="Foto Nadhea Ameylia"
+                  onerror="
+                    var p = this.parentNode;
+                    p.textContent = 'NA';
+                  "
+                />
+              </div>
+              <div class="who">
+                Nadhea Ameylia<small>Bandar Lampung, Indonesia</small>
+              </div>
+            </div>
+            <pre id="sql" aria-hidden="true"></pre>
+            <div class="result" id="result">
+              <dl>
+                <dt>kampus</dt>
+                <dd>Politeknik Negeri Lampung</dd>
+                <dt>ipk</dt>
+                <dd><b>3.71</b> / 4.00, Dengan Pujian</dd>
+                <dt>simpeg_black_box</dt>
+                <dd><b>27</b> skenario, 100% berhasil</dd>
+                <dt>peran_akses</dt>
+                <dd>Superadmin, Admin, User</dd>
+                <dt>stack</dt>
+                <dd>Node.js, PostgreSQL, EJS, Vite</dd>
+                <dt>status</dt>
+                <dd><b>siap bekerja</b></dd>
+              </dl>
+            </div>
+          </aside>
         </div>
       </div>
-    </div>
-  </header>
 
-    <main class="container">
-    <section id="about" class="fade-in">
-      <h2>Tentang Saya</h2>
-      <p>Lulusan D3 Manajemen Informatika, Politeknik Negeri Lampung. Berpengalaman sebagai AI‑Assisted Development Intern, bekerja pada pengembangan sistem informasi (SIMPEG) dan aplikasi Point of Sale (KasirLokal). Terbiasa bekerja dengan JavaScript, Node.js, PostgreSQL, dan metode pengujian seperti Black Box Testing.</p>
-    </section>
+      <section id="proyek" class="band">
+        <div class="wrap">
+          <h2>Proyek</h2>
+          <p class="section-sub">
+            Dua proyek terbesar saya dikerjakan untuk klien dan pengguna nyata
+            selama magang. Sisanya dari perkuliahan.
+          </p>
+          <div class="projects">
+            <article class="project">
+              <div class="when">Feb – Mei 2026</div>
+              <div>
+                <h3>SIMPEG: Sistem Informasi Kepegawaian</h3>
+                <p>
+                  Frontend sistem kepegawaian untuk klien PT Evolusi Teknologi
+                  Solusi dengan tiga level akses (Superadmin, Admin, User).
+                  Dibangun dengan metode Prototype dan divalidasi langsung
+                  bersama tim HR. Lolos 27 skenario Black Box Testing dengan
+                  tingkat keberhasilan 100%.
+                </p>
+                <ul class="chips">
+                  <li>JavaScript</li>
+                  <li>Vite</li>
+                  <li>Black Box Testing</li>
+                </ul>
+              </div>
+              <span class="go none">Proyek klien</span>
+            </article>
 
-    <section>
-      <h2>Keahlian</h2>
-      <ul>
-        <li>HTML, CSS, JavaScript, PHP, Vite, Node.js, EJS</li>
-        <li>MySQL, PostgreSQL, perancangan database (CRUD)</li>
-        <li>Prototype Development, Black Box Testing</li>
-        <li>Canva, draw.io — Desain & diagram</li>
-      </ul>
-    </section>
+            <article class="project">
+              <div class="when">Feb – Mei 2026</div>
+              <div>
+                <h3>KasirLokal: Aplikasi Kasir untuk UMKM</h3>
+                <p>
+                  Aplikasi Point of Sale berbasis web dengan pola MVC. Sudah
+                  terhubung ke payment gateway Duitku untuk transaksi digital,
+                  dan punya fitur audit log pada peran SuperAdmin untuk mencatat
+                  aktivitas sistem.
+                </p>
+                <ul class="chips">
+                  <li>Node.js</li>
+                  <li>PostgreSQL</li>
+                  <li>EJS</li>
+                  <li>Duitku</li>
+                </ul>
+              </div>
+              <a
+                class="go"
+                href="https://kasirlokal.my.id"
+                target="_blank"
+                rel="noopener"
+                >Buka demo</a
+              >
+            </article>
 
-    <section>
-      <h2>Pengalaman</h2>
-      <h3>AI‑Assisted Development Intern — PT Edukasi Tujuh Belas</h3>
-      <p>Feb 2026 – Mei 2026</p>
-      <ul>
-        <li>Mengembangkan frontend SIMPEG menggunakan JavaScript dan Vite.</li>
-        <li>Membangun KasirLokal (POS) untuk UMKM dengan Node.js, PostgreSQL, EJS, dan integrasi payment gateway.</li>
-        <li>Menerapkan Prototype Development dan Black Box Testing (27 skenario).</li>
-      </ul>
+            <article class="project">
+              <div class="when">Evoteks</div>
+              <div>
+                <h3>Database Evoteks: Panel Admin</h3>
+                <p>
+                  Panel admin untuk mengelola data internal Evoteks, mendukung
+                  audit dan pelaporan.
+                </p>
+                <ul class="chips">
+                  <li>PostgreSQL</li>
+                  <li>Admin panel</li>
+                </ul>
+              </div>
+              <a
+                class="go"
+                href="https://database.evoteks.org/"
+                target="_blank"
+                rel="noopener"
+                >Buka panel</a
+              >
+            </article>
 
-      <h3>Staff Ahli — BEM KBM Polinela</h3>
-      <p>Maret 2024 – Januari 2025</p>
-      <ul>
-        <li>Perencanaan program dan koordinasi komunikasi internal.</li>
-      </ul>
-    </section>
+            <article class="project">
+              <div class="when">Sep – Des 2025</div>
+              <div>
+                <h3>Souvnela: Web Pemesanan Souvenir</h3>
+                <p>
+                  Mengubah pemesanan souvenir kampus yang tadinya manual menjadi
+                  online, lengkap dengan katalog produk, sistem pemesanan,
+                  manajemen data, dan panel admin.
+                </p>
+                <ul class="chips">
+                  <li>Web</li>
+                  <li>Panel admin</li>
+                </ul>
+              </div>
+              <span class="go none">Proyek kampus</span>
+            </article>
 
-    <section id="projects" class="fade-in">
-      <h2>Proyek Pilihan</h2>
-      <div class="project-grid">
-        <article class="card">
-          <h3>KasirLokal — Aplikasi POS</h3>
-          <p>Landing page dan sistem POS berbasis web untuk UMKM. Fitur transaksi, manajemen produk, dan integrasi payment gateway.</p>
-          <p class="tags"><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">EJS</span></p>
-          <p><a class="btn" href="https://kasirlokal.my.id" target="_blank" rel="noopener">Lihat demo</a></p>
-        </article>
+            <article class="project">
+              <div class="when">Nov – Des 2025</div>
+              <div>
+                <h3>Aplikasi Pembelajaran Anak: UI/UX</h3>
+                <p>
+                  Merancang alur pengguna dan antarmuka aplikasi belajar anak
+                  berbasis mobile agar navigasinya mudah dipahami anak-anak,
+                  bekerja sama dengan tim pengembang.
+                </p>
+                <ul class="chips">
+                  <li>UI/UX</li>
+                  <li>Mobile</li>
+                </ul>
+              </div>
+              <span class="go none">Proyek kampus</span>
+            </article>
+          </div>
+          <p style="margin-top: 28px">
+            <a
+              href="https://github.com/deamey1305"
+              target="_blank"
+              rel="noopener"
+              style="font-weight: 600; border-bottom: 2px solid var(--mark)"
+              >Kode lainnya ada di GitHub</a
+            >
+          </p>
+        </div>
+      </section>
 
-        <article class="card">
-          <h3>Database Evoteks — Admin Panel</h3>
-          <p>Panel admin dan sistem manajemen data untuk kebutuhan internal Evoteks, mendukung audit dan pelaporan.</p>
-          <p class="tags"><span class="tag">PostgreSQL</span><span class="tag">Admin</span></p>
-          <p><a class="btn" href="https://database.evoteks.org/" target="_blank" rel="noopener">Buka panel</a></p>
-        </article>
+      <section id="pengalaman">
+        <div class="wrap">
+          <h2>Pengalaman</h2>
+          <p class="section-sub">Magang bersertifikat dan organisasi kampus.</p>
+          <div class="timeline">
+            <div class="event">
+              <div class="when">Feb 2026 – Mei 2026 · Jakarta Barat</div>
+              <h3>AI-Assisted Development Intern</h3>
+              <div class="org">PT Edukasi Tujuh Belas (E17 Course)</div>
+              <ul>
+                <li>
+                  Mengembangkan frontend SIMPEG untuk klien PT Evolusi Teknologi
+                  Solusi dengan akses tiga peran.
+                </li>
+                <li>
+                  Berkoordinasi langsung dengan tim HR Evoteks untuk validasi
+                  kebutuhan dan pengujian aplikasi.
+                </li>
+                <li>
+                  Membangun KasirLokal dengan Node.js, PostgreSQL, EJS,
+                  integrasi Duitku, dan audit log SuperAdmin.
+                </li>
+                <li>
+                  Menerima Certificate of Internship dari PT Edukasi Tujuh
+                  Belas.
+                </li>
+              </ul>
+            </div>
+            <div class="event">
+              <div class="when">Mar 2024 – Jan 2025 · Bandar Lampung</div>
+              <h3>Staff Ahli, Kementerian Luar Negeri</h3>
+              <div class="org">BEM KBM Politeknik Negeri Lampung</div>
+              <ul>
+                <li>
+                  Membantu merencanakan dan menjalankan program kerja BEM bidang
+                  hubungan luar negeri.
+                </li>
+                <li>
+                  Mengoordinasikan komunikasi antaranggota agar tugas dan
+                  tanggung jawab selaras.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <article class="card">
-          <h3>Souvnela — Web Pemesanan Souvenir</h3>
-          <p>Aplikasi pemesanan souvenir berbasis digital sebagai solusi branding dan layanan instan untuk kampus. Menyederhanakan proses pemesanan manual menjadi online.</p>
-          <p class="tags"><span class="tag">Web</span><span class="tag">E‑commerce</span></p>
-          <p><a class="btn" href="#" target="_blank" rel="noopener">Lihat proyek</a></p>
-        </article>
+      <section id="tentang" class="band">
+        <div class="wrap">
+          <h2>Tentang saya</h2>
+          <p class="section-sub">
+            Teliti, disiplin, dan cepat beradaptasi dengan teknologi baru.
+          </p>
+          <div class="about">
+            <div>
+              <p>
+                Saya lulusan D3 Manajemen Informatika angkatan 2023 dengan minat
+                kuat di pengembangan web. Saya terbiasa membangun aplikasi
+                <strong>end-to-end dengan pola MVC</strong>: frontend dengan
+                HTML, CSS, JavaScript, Vite, dan EJS, serta backend dengan
+                Node.js, PostgreSQL, dan MySQL.
+              </p>
+              <p>
+                Tugas akhir saya,
+                <strong
+                  >implementasi frontend SIMPEG pada PT Evolusi Teknologi
+                  Solusi</strong
+                >, dikerjakan bersama klien sungguhan. Dari situ saya belajar
+                menggali kebutuhan pengguna, menguji, lalu memperbaikinya sampai
+                tepat sasaran.
+              </p>
+              <p>
+                Saya nyaman bekerja dalam tim maupun mandiri, dan sekarang
+                mencari peran sebagai web developer atau di bidang pengembangan
+                sistem digital.
+              </p>
+            </div>
+            <div class="skills">
+              <div class="skill-group">
+                <h3>Frontend</h3>
+                <ul class="chips">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                  <li>Vite</li>
+                  <li>EJS</li>
+                </ul>
+              </div>
+              <div class="skill-group">
+                <h3>Backend</h3>
+                <ul class="chips">
+                  <li>Node.js</li>
+                  <li>PHP</li>
+                  <li>Arsitektur MVC</li>
+                  <li>Payment gateway (Duitku)</li>
+                </ul>
+              </div>
+              <div class="skill-group">
+                <h3>Database</h3>
+                <ul class="chips">
+                  <li>PostgreSQL</li>
+                  <li>MySQL</li>
+                  <li>Perancangan database</li>
+                </ul>
+              </div>
+              <div class="skill-group">
+                <h3>Metode dan alat</h3>
+                <ul class="chips">
+                  <li>Prototype</li>
+                  <li>Black Box Testing</li>
+                  <li>Git &amp; GitHub</li>
+                  <li>Canva</li>
+                  <li>draw.io</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <article class="card">
-          <h3>Aplikasi Pembelajaran Anak — Mobile</h3>
-          <p>Aplikasi mobile UI/UX untuk pembelajaran anak — fokus pada navigasi yang mudah, konten edukatif, dan desain ramah anak.</p>
-          <p class="tags"><span class="tag">UI/UX</span><span class="tag">Mobile</span></p>
-          <p><a class="btn" href="#" target="_blank" rel="noopener">Detail proyek</a></p>
-        </article>
+      <section id="pendidikan">
+        <div class="wrap edu">
+          <div>
+            <h2>Pendidikan</h2>
+            <div class="item">
+              <strong
+                >Politeknik Negeri Lampung, D3 Manajemen Informatika</strong
+              >
+              <span
+                >2023 – 2026 · IPK 3.71/4.00 (Dengan Pujian)<br />Tugas akhir:
+                Implementasi Frontend Sistem Informasi Kepegawaian Berbasis Web
+                pada PT. Evolusi Teknologi Solusi</span
+              >
+            </div>
+            <div class="item">
+              <strong>SMA Negeri 1 Natar, IPA</strong>
+              <span>2020 – 2023 · Natar, Lampung Selatan</span>
+            </div>
+          </div>
+          <div>
+            <h3 style="margin-top: 6px">Sertifikasi</h3>
+            <ul class="certs">
+              <li>
+                <b>Certificate of Internship, AI-Assisted Development</b
+                ><br />PT Edukasi Tujuh Belas (E17 Course), Mei 2026
+              </li>
+              <li>
+                <b>IBM SkillsBuild: Classifying Data Using IBM Granite</b
+                ><br />MDL-563, Agustus 2025
+              </li>
+              <li>
+                <b>IBM SkillsBuild: Summarizing Data Using IBM Granite</b
+                ><br />MDL-564, Agustus 2025
+              </li>
+              <li>
+                <b
+                  >IBM SkillsBuild: Data Classification and Summarization Using
+                  IBM Granite</b
+                ><br />MDL-565, Agustus 2025
+              </li>
+              <li><b>Database Design</b><br />Oracle Academy</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-        <article class="card">
-          <h3>Repositori GitHub</h3>
-          <p>Kumpulan kode, eksperimen, dan demo proyek. Lihat kode sumber dan dokumentasi tiap proyek di GitHub.</p>
-          <p class="tags"><span class="tag">GitHub</span></p>
-          <p><a class="btn" href="https://github.com/deamey1305" target="_blank" rel="noopener">Lihat GitHub</a></p>
-        </article>
+      <section id="kontak" style="padding-top: 20px">
+        <div class="wrap">
+          <div class="contact">
+            <h2>Mari bekerja sama</h2>
+            <p>
+              Punya lowongan atau proyek web? Kirim pesan lewat email atau
+              WhatsApp.
+            </p>
+            <div class="actions">
+              <a class="btn primary" href="mailto:nadheaameylia@gmail.com"
+                >Kirim email</a
+              >
+              <a
+                class="btn"
+                href="https://wa.me/62895378216440"
+                target="_blank"
+                rel="noopener"
+                >WhatsApp</a
+              >
+              <a
+                class="btn"
+                href="https://github.com/deamey1305"
+                target="_blank"
+                rel="noopener"
+                >GitHub</a
+              >
+              <a
+                class="btn"
+                href="https://www.linkedin.com/in/nadhea-ameylia-b7a349309"
+                target="_blank"
+                rel="noopener"
+                >LinkedIn</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        nadheaameylia@gmail.com · 0895-3782-16440 · © 2026 Nadhea Ameylia
       </div>
-    </section>
-
-    <section class="fade-in">
-      <h2>Pendidikan & Sertifikasi</h2>
-      <p>D3 Manajemen Informatika — Politeknik Negeri Lampung (2023–2026). Tugas akhir: Pengembangan Sistem Informasi Kepegawaian (SIMPEG).</p>
-      <p>Sertifikat termasuk Certificate of Internship (E17 Course) dan beberapa kursus IBM SkillsBuild terkait data.</p>
-    </section>
-    <section id="contact" class="fade-in">
-      <h2>Kontak</h2>
-      <p>Ingin versi PDF atau halaman dengan screenshot proyek? Hubungi saya atau lihat profil dan repositori:</p>
-      <p>
-        <a class="btn" href="mailto:nadheaameylia@gmail.com">Kirim Email</a>
-        <a class="btn" href="https://github.com/deamey1305" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/nadhea-ameylia-b7a349309" target="_blank" rel="noopener">LinkedIn</a>
-      </p>
-    </section>
-
-    <footer class="footer">
-      <p>Created by Nadhea Ameylia — © 2026</p>
     </footer>
-  </main>
-</body>
+
+    <script>
+      (function () {
+        var el = document.getElementById("sql"),
+          res = document.getElementById("result");
+        var html =
+          '<span class="kw">SELECT</span> * <span class="kw">FROM</span> lulusan\n' +
+          '<span class="kw">WHERE</span> nama = <span class="str">\'Nadhea Ameylia\'</span>\n' +
+          '<span class="kw">AND</span> jurusan = <span class="str">\'Manajemen Informatika\'</span>;';
+        var reduce = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+        if (reduce) {
+          el.innerHTML = html;
+          res.classList.add("show");
+          return;
+        }
+        // type the plain text, then swap in highlighted markup
+        var tmp = document.createElement("div");
+        tmp.innerHTML = html;
+        var plain = tmp.textContent,
+          i = 0;
+        function tick() {
+          el.textContent = plain.slice(0, i);
+          var c = document.createElement("span");
+          c.className = "caret";
+          el.appendChild(c);
+          if (i++ < plain.length) {
+            setTimeout(tick, 28);
+          } else {
+            setTimeout(function () {
+              el.innerHTML = html;
+              res.classList.add("show");
+            }, 350);
+          }
+        }
+        setTimeout(tick, 400);
+      })();
+    </script>
+  </body>
 </html>
-<!doctype html>
-<html lang="id">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Nadhea Ameylia — Portofolio</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="hero">
-    <div class="container">
-      <h1>Nadhea Ameylia</h1>
-      <p class="subtitle">D3 Manajemen Informatika — Web & Database Developer</p>
-      <p class="contact">nadheaameylia@gmail.com • 0895-3782-16440</p>
-      <p class="links">
-        <a href="https://github.com/deamey1305" target="_blank" rel="noopener">GitHub</a> •
-        <a href="https://www.linkedin.com/in/nadhea-ameylia-b7a349309" target="_blank" rel="noopener">LinkedIn</a>
-      </p>
-    </div>
-  </header>
-
-  <main class="container">
-    <section>
-      <h2>Tentang Saya</h2>
-      <p>Lulusan D3 Manajemen Informatika, Politeknik Negeri Lampung. Berpengalaman sebagai AI‑Assisted Development Intern, bekerja pada pengembangan sistem informasi (SIMPEG) dan aplikasi Point of Sale (KasirLokal). Terbiasa bekerja dengan JavaScript, Node.js, PostgreSQL, dan metode pengujian seperti Black Box Testing.</p>
-    </section>
-
-    <section>
-      <h2>Keahlian</h2>
-      <ul>
-        <li>HTML, CSS, JavaScript, PHP, Vite, Node.js, EJS</li>
-        <li>MySQL, PostgreSQL, perancangan database (CRUD)</li>
-        <li>Prototype Development, Black Box Testing</li>
-        <li>Canva, draw.io — Desain & diagram</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Pengalaman</h2>
-      <h3>AI‑Assisted Development Intern — PT Edukasi Tujuh Belas</h3>
-      <p>Feb 2026 – Mei 2026</p>
-      <ul>
-        <li>Mengembangkan frontend SIMPEG menggunakan JavaScript dan Vite.</li>
-        <li>Membangun KasirLokal (POS) untuk UMKM dengan Node.js, PostgreSQL, EJS, dan integrasi payment gateway.</li>
-        <li>Menerapkan Prototype Development dan Black Box Testing (27 skenario).</li>
-      </ul>
-
-      <h3>Staff Ahli — BEM KBM Polinela</h3>
-      <p>Maret 2024 – Januari 2025</p>
-      <ul>
-        <li>Perencanaan program dan koordinasi komunikasi internal.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Proyek</h2>
-      <ul class="projects">
-        <li>
-          <strong>KasirLokal — Aplikasi POS</strong><br />
-          Landing & sistem POS untuk UMKM. Demo: <a href="https://kasirlokal.my.id" target="_blank" rel="noopener">kasirlokal.my.id</a>
-        </li>
-        <li>
-          <strong>Database Evoteks — Admin Panel</strong><br />
-          Panel dan manajemen data: <a href="https://database.evoteks.org/" target="_blank" rel="noopener">database.evoteks.org</a>
-        </li>
-        <li>
-          <strong>Repositori GitHub</strong><br />
-          Kode proyek dan eksperimen: <a href="https://github.com/deamey1305" target="_blank" rel="noopener">github.com/deamey1305</a>
-        </li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Pendidikan & Sertifikasi</h2>
-      <p>D3 Manajemen Informatika — Politeknik Negeri Lampung (2023–2026). Tugas akhir: Pengembangan Sistem Informasi Kepegawaian (SIMPEG).</p>
-      <p>Sertifikat termasuk Certificate of Internship (E17 Course) dan beberapa kursus IBM SkillsBuild terkait data.</p>
-    </section>
-
-    <footer class="footer">
-      <p>Ingin versi PDF atau halaman dengan screenshot proyek? Hubungi: <a href="mailto:nadheaameylia@gmail.com">nadheaameylia@gmail.com</a></p>
-    </footer>
-  </main>
-</body>
-</html>
->>>>>>> 9c07791 (Add initial portfolio site)
